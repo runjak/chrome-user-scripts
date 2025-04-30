@@ -1,6 +1,6 @@
 {
-  "name": "Torch Atlassian AI: Jira",
-  "description": "Remove everything AI from Jira.",
+  "name": "Torch Atlassian AI",
+  "description": "Remove everything AI on atlassian.net domains",
   "version": "0.1",
   "manifest_version": 3,
   "minimum_chrome_version": "120",

@@ -1,4 +1,4 @@
-console.log("Hello Fiona. Let us burn down some AI 🔥");
+console.log("Torching Atlassian AI 🔥");
 
 window.setInterval(() => {
   document.querySelectorAll(".acronym-highlight").forEach((node) => {
