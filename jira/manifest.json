@@ -1,0 +1,12 @@
+{
+  "name": "Torch Atlassian AI: Jira",
+  "description": "Remove everything AI from Jira.",
+  "version": "0.1",
+  "manifest_version": 3,
+  "minimum_chrome_version": "120",
+  "permissions": ["userScripts"],
+  "content_scripts": [
+    { "matches": ["*://*.atlassian.net/*"], "js": ["./index.js"] }
+  ],
+  "host_permissions": ["*://*.atlassian.net/*"]
+}
