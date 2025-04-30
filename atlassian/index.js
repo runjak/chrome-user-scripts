@@ -14,4 +14,6 @@ window.setInterval(() => {
   removeAll('[data-testid="issue-smart-request-summary.ui.ai-container"]');
   removeAll('[data-testid="atlassian-intelligence-toolbar-button"]');
   removeAll('[data-testid="contextual-pulse-none"]');
+  removeAll('[data-testid="contextual-pulse-single"]');
+  removeAll('[data-testid="contextual-pulse-double"]');
 }, 500);
