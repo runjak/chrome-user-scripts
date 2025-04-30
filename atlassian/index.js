@@ -1,29 +1,17 @@
 console.log("Torching Atlassian AI 🔥");
 
+const removeAll = (selector) => {
+  document.querySelectorAll(selector).forEach((node) => node.remove());
+};
+
 window.setInterval(() => {
   document.querySelectorAll(".acronym-highlight").forEach((node) => {
     node.removeAttribute("style");
   });
 
-  document
-    .querySelectorAll('[aria-label="AI"]')
-    .forEach((node) => node.remove());
-
-  document
-    .querySelectorAll('[aria-label="Quick comments"]')
-    .forEach((node) => node.remove());
-
-  document
-    .querySelectorAll(
-      '[data-testid="issue-smart-request-summary.ui.ai-container"]'
-    )
-    .forEach((node) => node.remove());
-
-  document
-    .querySelectorAll('[data-testid="atlassian-intelligence-toolbar-button"]')
-    .forEach((node) => node.remove());
-
-  document
-    .querySelectorAll('[data-testid="contextual-pulse-none"]')
-    .forEach((node) => node.remove());
+  removeAll('[aria-label="AI"]');
+  removeAll('[aria-label="Quick comments"]');
+  removeAll('[data-testid="issue-smart-request-summary.ui.ai-container"]');
+  removeAll('[data-testid="atlassian-intelligence-toolbar-button"]');
+  removeAll('[data-testid="contextual-pulse-none"]');
 }, 500);
