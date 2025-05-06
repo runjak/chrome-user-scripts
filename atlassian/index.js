@@ -4,16 +4,34 @@ const removeAll = (selector) => {
   document.querySelectorAll(selector).forEach((node) => node.remove());
 };
 
-window.setInterval(() => {
-  document.querySelectorAll(".acronym-highlight").forEach((node) => {
-    node.removeAttribute("style");
-  });
+// Extension state
+let intervalHandle = null;
+let documentIsVisible = document.visibilityState === "visible";
 
-  removeAll('[aria-label="AI"]');
-  removeAll('[aria-label="Quick comments"]');
-  removeAll('[data-testid="issue-smart-request-summary.ui.ai-container"]');
-  removeAll('[data-testid="atlassian-intelligence-toolbar-button"]');
-  removeAll('[data-testid="contextual-pulse-none"]');
-  removeAll('[data-testid="contextual-pulse-single"]');
-  removeAll('[data-testid="contextual-pulse-double"]');
-}, 500);
+const torch = () => {
+  if (documentIsVisible) {
+    intervalHandle = window.setInterval(() => {
+      document.querySelectorAll(".acronym-highlight").forEach((node) => {
+        node.removeAttribute("style");
+      });
+
+      removeAll('[aria-label="AI"]');
+      removeAll('[aria-label="Quick comments"]');
+      removeAll('[data-testid="issue-smart-request-summary.ui.ai-container"]');
+      removeAll('[data-testid="atlassian-intelligence-toolbar-button"]');
+      removeAll('[data-testid="contextual-pulse-none"]');
+      removeAll('[data-testid="contextual-pulse-single"]');
+      removeAll('[data-testid="contextual-pulse-double"]');
+    }, 500);
+  } else if (intervalHandle !== null) {
+    window.clearInterval(intervalHandle);
+    intervalHandle = null;
+  }
+};
+
+document.addEventListener("visibilitychange", () => {
+  documentIsVisible = document.visibilityState === "visible";
+  torch();
+});
+
+torch();
