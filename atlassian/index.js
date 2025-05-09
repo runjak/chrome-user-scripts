@@ -22,6 +22,9 @@ const torch = () => {
       removeAll('[data-testid="contextual-pulse-none"]');
       removeAll('[data-testid="contextual-pulse-single"]');
       removeAll('[data-testid="contextual-pulse-double"]');
+      removeAll(
+        '[data-testid="atlassian-navigation.ui.conversation-assistant.app-navigation-ai-mate"]'
+      );
     }, 500);
   } else if (intervalHandle !== null) {
     window.clearInterval(intervalHandle);
