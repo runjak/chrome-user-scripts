@@ -25,6 +25,7 @@ const torch = () => {
       removeAll(
         '[data-testid="atlassian-navigation.ui.conversation-assistant.app-navigation-ai-mate"]'
       );
+      removeAll('[data-testid="app-navigation-ai-mate"]');
     }, 500);
   } else if (intervalHandle !== null) {
     window.clearInterval(intervalHandle);
