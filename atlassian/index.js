@@ -26,6 +26,7 @@ const torch = () => {
         '[data-testid="atlassian-navigation.ui.conversation-assistant.app-navigation-ai-mate"]'
       );
       removeAll('[data-testid="app-navigation-ai-mate"]');
+      removeAll('[data-testid="platform-ai-button"]');
     }, 500);
   } else if (intervalHandle !== null) {
     window.clearInterval(intervalHandle);
